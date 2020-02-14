@@ -1,0 +1,173 @@
+﻿@charset "utf-8"; /*文字コード指定*/
+
+/* ----- css reset(各ブラウザで指定されているスタイルを初期化)と全体設定 ----- */
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, textarea, p, th, td, img {
+	margin: 0; /*ボックス外側の余白(値1つは上下左右をまとめて指定)*/
+	padding: 0; /*ボックス内側の余白(値1つは上下左右をまとめて指定)*/
+	border: 0; /*境界線指定*/
+}
+
+body {
+	line-height: 2;	/*行の高さ指定(数値のみの場合はfont-sizeの倍数)*/
+	font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro"; /*フォントの種類指定(左から優先順位)*/
+	font-size: 75%; /* フォントサイズ指定(%はブラウザに設定した標準文字サイズ(通常16px)に対する値)*/
+	color: #000; /*文字色指定*/
+}
+
+ol, ul {
+	list-style: none; /*リストマーカーの種類指定(noneはなし)*/
+}
+
+a { /*リンクの文字設定(マウスをのせる前)*/
+	color: #000; /*文字色指定*/
+	text-decoration: none; /*テキストの装飾指定(下線、上線など)(noneはなし)*/
+	border-bottom: 1px solid #000 /*境界線の一括指定(solidは1本線,線の太さ,線の色)*/
+	padding-bottom: 1px; /*ボックス内側下の余白*/
+}
+
+a:hover { /*リンクの文字設定(マウスをのせた時)*/
+	text-decoration: none; /*テキストの装飾指定(下線、上線など)(noneはなし)*/
+	border: none; /*境界線指定(noneはなし)*/
+}
+
+.color1 {
+	color: #f00; /*文字色指定*/
+}
+
+/* ----- レイアウト ----- */
+#container { /*container(入れ物、容器)の中に各要素(ボックス)を配置*/
+	width: 100%; /*幅指定(100%は画面横幅いっぱいに表示)*/
+	margin: auto; /*ボックス外側の余白(autoはボックス幅や隣接する他ボックス幅による自動余白割り当て)*/
+	background-color:#000; /*背景色指定*/
+}
+
+#content {
+	width: 100%; /*幅指定(100%は画面横幅いっぱいに表示)*/
+	float: right; /*要素を左か右に寄せて配置(rightは右に寄せる)*/
+	margin: 20px 0; /*ボックス外側の余白(値2つは左から上下,左右の値)*/
+	margin-left: -120px; /*ボックス外側左の余白*/
+}
+
+#content_inner {
+	margin-left: 120px; /*ボックス外側左の余白*/
+}
+
+#leftside {
+	width: 120px; /*幅指定*/
+	position:fixed; /*ボックスの配置方法(fixedは固定配置)*/
+	height: 100%; /*領域の高さ指定(100%は縦いっぱいに表示)*/
+	margin: 0; /*ボックス外側の余白*/
+	padding: 0; /*ボックス内側の余白*/
+	background-color: #E6E6E6; /*背景色指定*/
+}
+
+/* ----- 画像を背景いっぱいに表示 ----- */
+
+#bg {
+	position:fixed; /*ボックスの配置方法(fixedは固定配置)*/
+	top:-50%; /*上からの距離(positionで指定している場合に適用)*/
+	left:-50%; /*左からの距離(positionで指定している場合に適用)*/
+	width:200%; /*幅指定*/
+	height:200%; /*領域の高さ指定(100%は縦いっぱいに表示)*/
+	z-index:-1; /*ボックスの重なりの順序を指定*/
+}
+
+#bg img {
+	position:absolute;
+	top:0; /*上からの距離(positionで指定している場合に適用)*/
+	left:0; /*左からの距離(positionで指定している場合に適用)*/
+	right:0; /*右からの距離(positionで指定している場合に適用)*/
+	bottom:0; /*下からの距離(positionで指定している場合に適用)*/
+	margin: auto; /*ボックス外側の余白(autoはボックス幅や隣接する他ボックス幅による自動余白割り当て)*/
+	min-width:50%; /*領域幅の最小値指定*/
+	min-height:50%; /*領域高さの最小値指定*/
+}
+
+/* ----- Copyright表示設定 ----- */
+
+.copy {
+	position:fixed; /*ボックスの配置方法(fixedは固定配置)*/
+	bottom: 200px; /*下からの距離(positionで指定している場合に適用)*/
+	right: -100px; /*右からの距離(positionで指定している場合に適用)*/
+	color: #fff; /*文字色指定*/
+	font-size: 10px; /*フォントサイズ指定*/
+	/*テキスト270度回転設定*/
+	-moz-transform:matrix(0, 1, -1, 0, 0, 0);
+	-webkit-transform:matrix(0, 1, -1, 0, 0, 0);
+	-o-transform:matrix(0, 1, -1, 0, 0, 0);
+	transform:matrix(0, 1, -1, 0, 0, 0);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+
+/* ----- コンテンツ ----- */
+
+.post {
+	text-align: center; /*行の水平方向の揃え方(centerは中央揃え)*/
+	color: #ffff00;
+}
+
+.post h1{
+	font-size: 100px;
+	color: #ffff00;
+}
+
+.post h2 {
+	font-size: 50px; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+	margin: 30px 0; /*ボックス外側の余白(値2つは左から上下,左右の値)*/
+	font-weight: normal; /*フォントの太さ指定(normalは標準)*/
+	text-transform: uppercase; /*大文字と小文字の変換を指定するプロパティ(uppercaseは全ての文字を大文字に変換)*/
+}
+
+.post ul {
+	font-size: 1em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+}
+
+/* ----- テーブル設定 ----- */
+
+.ta {
+	width: 600px; /*幅指定*/
+	border-collapse: collapse; /*境界線の表示指定(collapseは重ねて表示)*/
+	margin: 0 auto; /*ボックス外側の余白(値2つは左から上下,左右の値(左右autoで中央配置))*/
+}
+
+.ta th, td {
+	border: none; /*境界線の一括指定(noneはなし)*/
+	padding: 0 0 10px 10px; /*ボックス内側の余白(値4つは左から上,右,下,左の値)*/
+	color: #fff; /*文字色指定*/
+	font-size: 1.5em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+	font-weight: normal; /*フォントの太さ指定(normalは標準)*/
+	text-align: left; /*行の水平方向の揃え方(leftは左寄せ)*/
+}
+
+/* ----- ページ左のメニュー設定 ----- */
+#menu li a {
+	display: block; /*要素の表示形式指定(blockはブロックレベルで表示)*/
+	border: none; /*境界線指定(noneはなし)*/
+}
+
+#home {
+	min-height: 800px; /*領域高さの最小値指定*/
+	padding-top: 100px; /*ボックス内側上の余白*/
+}
+
+#news {
+	min-height: 800px; /*領域高さの最小値指定*/
+	padding-top: 50px; /*ボックス内側上の余白*/
+}
+
+#about {
+	min-height: 800px; /*領域高さの最小値指定*/
+	padding-top: 50px; /*ボックス内側上の余白*/
+}
+
+#works {
+	min-height: 800px; /*領域高さの最小値指定*/
+	padding-top: 50px; /*ボックス内側上の余白*/
+	margin: 50px; /*ボックス外側の余白*/
+}
+
+#contact {
+	min-height: 800px; /*領域高さの最小値指定*/
+	padding-top: 50px; /*ボックス内側上の余白*/
+}
